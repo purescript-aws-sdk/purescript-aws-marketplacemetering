@@ -44,7 +44,7 @@ Constructs BatchMeterUsageRequest's fields from required parameters
 
 ``` purescript
 newtype BatchMeterUsageResult
-  = BatchMeterUsageResult { "Results" :: NullOrUndefined (UsageRecordResultList), "UnprocessedRecords" :: NullOrUndefined (UsageRecordList) }
+  = BatchMeterUsageResult { "Results" :: Maybe (UsageRecordResultList), "UnprocessedRecords" :: Maybe (UsageRecordList) }
 ```
 
 <p>Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.</p>
@@ -69,7 +69,7 @@ Constructs BatchMeterUsageResult from required parameters
 #### `newBatchMeterUsageResult'`
 
 ``` purescript
-newBatchMeterUsageResult' :: ({ "Results" :: NullOrUndefined (UsageRecordResultList), "UnprocessedRecords" :: NullOrUndefined (UsageRecordList) } -> { "Results" :: NullOrUndefined (UsageRecordResultList), "UnprocessedRecords" :: NullOrUndefined (UsageRecordList) }) -> BatchMeterUsageResult
+newBatchMeterUsageResult' :: ({ "Results" :: Maybe (UsageRecordResultList), "UnprocessedRecords" :: Maybe (UsageRecordList) } -> { "Results" :: Maybe (UsageRecordResultList), "UnprocessedRecords" :: Maybe (UsageRecordList) }) -> BatchMeterUsageResult
 ```
 
 Constructs BatchMeterUsageResult's fields from required parameters
@@ -94,7 +94,7 @@ Encode CustomerIdentifier
 
 ``` purescript
 newtype DuplicateRequestException
-  = DuplicateRequestException { message :: NullOrUndefined (ErrorMessage') }
+  = DuplicateRequestException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity.</p>
@@ -119,7 +119,7 @@ Constructs DuplicateRequestException from required parameters
 #### `newDuplicateRequestException'`
 
 ``` purescript
-newDuplicateRequestException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> DuplicateRequestException
+newDuplicateRequestException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> DuplicateRequestException
 ```
 
 Constructs DuplicateRequestException's fields from required parameters
@@ -128,7 +128,7 @@ Constructs DuplicateRequestException's fields from required parameters
 
 ``` purescript
 newtype ExpiredTokenException
-  = ExpiredTokenException { message :: NullOrUndefined (ErrorMessage') }
+  = ExpiredTokenException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
@@ -153,7 +153,7 @@ Constructs ExpiredTokenException from required parameters
 #### `newExpiredTokenException'`
 
 ``` purescript
-newExpiredTokenException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ExpiredTokenException
+newExpiredTokenException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ExpiredTokenException
 ```
 
 Constructs ExpiredTokenException's fields from required parameters
@@ -162,7 +162,7 @@ Constructs ExpiredTokenException's fields from required parameters
 
 ``` purescript
 newtype InternalServiceErrorException
-  = InternalServiceErrorException { message :: NullOrUndefined (ErrorMessage') }
+  = InternalServiceErrorException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
@@ -187,7 +187,7 @@ Constructs InternalServiceErrorException from required parameters
 #### `newInternalServiceErrorException'`
 
 ``` purescript
-newInternalServiceErrorException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InternalServiceErrorException
+newInternalServiceErrorException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InternalServiceErrorException
 ```
 
 Constructs InternalServiceErrorException's fields from required parameters
@@ -196,7 +196,7 @@ Constructs InternalServiceErrorException's fields from required parameters
 
 ``` purescript
 newtype InvalidCustomerIdentifierException
-  = InvalidCustomerIdentifierException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidCustomerIdentifierException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
@@ -221,7 +221,7 @@ Constructs InvalidCustomerIdentifierException from required parameters
 #### `newInvalidCustomerIdentifierException'`
 
 ``` purescript
-newInvalidCustomerIdentifierException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidCustomerIdentifierException
+newInvalidCustomerIdentifierException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidCustomerIdentifierException
 ```
 
 Constructs InvalidCustomerIdentifierException's fields from required parameters
@@ -230,7 +230,7 @@ Constructs InvalidCustomerIdentifierException's fields from required parameters
 
 ``` purescript
 newtype InvalidEndpointRegionException
-  = InvalidEndpointRegionException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidEndpointRegionException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The endpoint being called is in a region different from your EC2 instance. The region of the Metering service endpoint and the region of the EC2 instance must match.</p>
@@ -255,7 +255,7 @@ Constructs InvalidEndpointRegionException from required parameters
 #### `newInvalidEndpointRegionException'`
 
 ``` purescript
-newInvalidEndpointRegionException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidEndpointRegionException
+newInvalidEndpointRegionException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidEndpointRegionException
 ```
 
 Constructs InvalidEndpointRegionException's fields from required parameters
@@ -264,7 +264,7 @@ Constructs InvalidEndpointRegionException's fields from required parameters
 
 ``` purescript
 newtype InvalidProductCodeException
-  = InvalidProductCodeException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidProductCodeException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The product code passed does not match the product code used for publishing the product.</p>
@@ -289,7 +289,7 @@ Constructs InvalidProductCodeException from required parameters
 #### `newInvalidProductCodeException'`
 
 ``` purescript
-newInvalidProductCodeException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidProductCodeException
+newInvalidProductCodeException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidProductCodeException
 ```
 
 Constructs InvalidProductCodeException's fields from required parameters
@@ -298,7 +298,7 @@ Constructs InvalidProductCodeException's fields from required parameters
 
 ``` purescript
 newtype InvalidTokenException
-  = InvalidTokenException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidTokenException { message :: Maybe (ErrorMessage') }
 ```
 
 ##### Instances
@@ -321,7 +321,7 @@ Constructs InvalidTokenException from required parameters
 #### `newInvalidTokenException'`
 
 ``` purescript
-newInvalidTokenException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidTokenException
+newInvalidTokenException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidTokenException
 ```
 
 Constructs InvalidTokenException's fields from required parameters
@@ -330,7 +330,7 @@ Constructs InvalidTokenException's fields from required parameters
 
 ``` purescript
 newtype InvalidUsageDimensionException
-  = InvalidUsageDimensionException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidUsageDimensionException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
@@ -355,7 +355,7 @@ Constructs InvalidUsageDimensionException from required parameters
 #### `newInvalidUsageDimensionException'`
 
 ``` purescript
-newInvalidUsageDimensionException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidUsageDimensionException
+newInvalidUsageDimensionException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidUsageDimensionException
 ```
 
 Constructs InvalidUsageDimensionException's fields from required parameters
@@ -396,7 +396,7 @@ Constructs MeterUsageRequest's fields from required parameters
 
 ``` purescript
 newtype MeterUsageResult
-  = MeterUsageResult { "MeteringRecordId" :: NullOrUndefined (String) }
+  = MeterUsageResult { "MeteringRecordId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -419,7 +419,7 @@ Constructs MeterUsageResult from required parameters
 #### `newMeterUsageResult'`
 
 ``` purescript
-newMeterUsageResult' :: ({ "MeteringRecordId" :: NullOrUndefined (String) } -> { "MeteringRecordId" :: NullOrUndefined (String) }) -> MeterUsageResult
+newMeterUsageResult' :: ({ "MeteringRecordId" :: Maybe (String) } -> { "MeteringRecordId" :: Maybe (String) }) -> MeterUsageResult
 ```
 
 Constructs MeterUsageResult's fields from required parameters
@@ -494,7 +494,7 @@ Constructs ResolveCustomerRequest's fields from required parameters
 
 ``` purescript
 newtype ResolveCustomerResult
-  = ResolveCustomerResult { "CustomerIdentifier" :: NullOrUndefined (CustomerIdentifier), "ProductCode" :: NullOrUndefined (ProductCode) }
+  = ResolveCustomerResult { "CustomerIdentifier" :: Maybe (CustomerIdentifier), "ProductCode" :: Maybe (ProductCode) }
 ```
 
 <p>The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.</p>
@@ -519,7 +519,7 @@ Constructs ResolveCustomerResult from required parameters
 #### `newResolveCustomerResult'`
 
 ``` purescript
-newResolveCustomerResult' :: ({ "CustomerIdentifier" :: NullOrUndefined (CustomerIdentifier), "ProductCode" :: NullOrUndefined (ProductCode) } -> { "CustomerIdentifier" :: NullOrUndefined (CustomerIdentifier), "ProductCode" :: NullOrUndefined (ProductCode) }) -> ResolveCustomerResult
+newResolveCustomerResult' :: ({ "CustomerIdentifier" :: Maybe (CustomerIdentifier), "ProductCode" :: Maybe (ProductCode) } -> { "CustomerIdentifier" :: Maybe (CustomerIdentifier), "ProductCode" :: Maybe (ProductCode) }) -> ResolveCustomerResult
 ```
 
 Constructs ResolveCustomerResult's fields from required parameters
@@ -528,7 +528,7 @@ Constructs ResolveCustomerResult's fields from required parameters
 
 ``` purescript
 newtype ThrottlingException
-  = ThrottlingException { message :: NullOrUndefined (ErrorMessage') }
+  = ThrottlingException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The calls to the MeterUsage API are throttled.</p>
@@ -553,7 +553,7 @@ Constructs ThrottlingException from required parameters
 #### `newThrottlingException'`
 
 ``` purescript
-newThrottlingException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ThrottlingException
+newThrottlingException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ThrottlingException
 ```
 
 Constructs ThrottlingException's fields from required parameters
@@ -562,7 +562,7 @@ Constructs ThrottlingException's fields from required parameters
 
 ``` purescript
 newtype TimestampOutOfBoundsException
-  = TimestampOutOfBoundsException { message :: NullOrUndefined (ErrorMessage') }
+  = TimestampOutOfBoundsException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
@@ -587,7 +587,7 @@ Constructs TimestampOutOfBoundsException from required parameters
 #### `newTimestampOutOfBoundsException'`
 
 ``` purescript
-newTimestampOutOfBoundsException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> TimestampOutOfBoundsException
+newTimestampOutOfBoundsException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> TimestampOutOfBoundsException
 ```
 
 Constructs TimestampOutOfBoundsException's fields from required parameters
@@ -678,7 +678,7 @@ Encode UsageRecordList
 
 ``` purescript
 newtype UsageRecordResult
-  = UsageRecordResult { "UsageRecord" :: NullOrUndefined (UsageRecord), "MeteringRecordId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (UsageRecordResultStatus) }
+  = UsageRecordResult { "UsageRecord" :: Maybe (UsageRecord), "MeteringRecordId" :: Maybe (String), "Status" :: Maybe (UsageRecordResultStatus) }
 ```
 
 <p>A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.</p>
@@ -703,7 +703,7 @@ Constructs UsageRecordResult from required parameters
 #### `newUsageRecordResult'`
 
 ``` purescript
-newUsageRecordResult' :: ({ "UsageRecord" :: NullOrUndefined (UsageRecord), "MeteringRecordId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (UsageRecordResultStatus) } -> { "UsageRecord" :: NullOrUndefined (UsageRecord), "MeteringRecordId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (UsageRecordResultStatus) }) -> UsageRecordResult
+newUsageRecordResult' :: ({ "UsageRecord" :: Maybe (UsageRecord), "MeteringRecordId" :: Maybe (String), "Status" :: Maybe (UsageRecordResultStatus) } -> { "UsageRecord" :: Maybe (UsageRecord), "MeteringRecordId" :: Maybe (String), "Status" :: Maybe (UsageRecordResultStatus) }) -> UsageRecordResult
 ```
 
 Constructs UsageRecordResult's fields from required parameters

@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -42,8 +41,8 @@ newBatchMeterUsageRequest' _ProductCode _UsageRecords customize = (BatchMeterUsa
 
 -- | <p>Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.</p>
 newtype BatchMeterUsageResult = BatchMeterUsageResult 
-  { "Results" :: NullOrUndefined (UsageRecordResultList)
-  , "UnprocessedRecords" :: NullOrUndefined (UsageRecordList)
+  { "Results" :: Maybe (UsageRecordResultList)
+  , "UnprocessedRecords" :: Maybe (UsageRecordList)
   }
 derive instance newtypeBatchMeterUsageResult :: Newtype BatchMeterUsageResult _
 derive instance repGenericBatchMeterUsageResult :: Generic BatchMeterUsageResult _
@@ -53,12 +52,12 @@ instance encodeBatchMeterUsageResult :: Encode BatchMeterUsageResult where encod
 
 -- | Constructs BatchMeterUsageResult from required parameters
 newBatchMeterUsageResult :: BatchMeterUsageResult
-newBatchMeterUsageResult  = BatchMeterUsageResult { "Results": (NullOrUndefined Nothing), "UnprocessedRecords": (NullOrUndefined Nothing) }
+newBatchMeterUsageResult  = BatchMeterUsageResult { "Results": Nothing, "UnprocessedRecords": Nothing }
 
 -- | Constructs BatchMeterUsageResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchMeterUsageResult' :: ( { "Results" :: NullOrUndefined (UsageRecordResultList) , "UnprocessedRecords" :: NullOrUndefined (UsageRecordList) } -> {"Results" :: NullOrUndefined (UsageRecordResultList) , "UnprocessedRecords" :: NullOrUndefined (UsageRecordList) } ) -> BatchMeterUsageResult
-newBatchMeterUsageResult'  customize = (BatchMeterUsageResult <<< customize) { "Results": (NullOrUndefined Nothing), "UnprocessedRecords": (NullOrUndefined Nothing) }
+newBatchMeterUsageResult' :: ( { "Results" :: Maybe (UsageRecordResultList) , "UnprocessedRecords" :: Maybe (UsageRecordList) } -> {"Results" :: Maybe (UsageRecordResultList) , "UnprocessedRecords" :: Maybe (UsageRecordList) } ) -> BatchMeterUsageResult
+newBatchMeterUsageResult'  customize = (BatchMeterUsageResult <<< customize) { "Results": Nothing, "UnprocessedRecords": Nothing }
 
 
 
@@ -73,7 +72,7 @@ instance encodeCustomerIdentifier :: Encode CustomerIdentifier where encode = ge
 
 -- | <p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity.</p>
 newtype DuplicateRequestException = DuplicateRequestException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeDuplicateRequestException :: Newtype DuplicateRequestException _
 derive instance repGenericDuplicateRequestException :: Generic DuplicateRequestException _
@@ -83,18 +82,18 @@ instance encodeDuplicateRequestException :: Encode DuplicateRequestException whe
 
 -- | Constructs DuplicateRequestException from required parameters
 newDuplicateRequestException :: DuplicateRequestException
-newDuplicateRequestException  = DuplicateRequestException { "message": (NullOrUndefined Nothing) }
+newDuplicateRequestException  = DuplicateRequestException { "message": Nothing }
 
 -- | Constructs DuplicateRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDuplicateRequestException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> DuplicateRequestException
-newDuplicateRequestException'  customize = (DuplicateRequestException <<< customize) { "message": (NullOrUndefined Nothing) }
+newDuplicateRequestException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> DuplicateRequestException
+newDuplicateRequestException'  customize = (DuplicateRequestException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
 newtype ExpiredTokenException = ExpiredTokenException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeExpiredTokenException :: Newtype ExpiredTokenException _
 derive instance repGenericExpiredTokenException :: Generic ExpiredTokenException _
@@ -104,18 +103,18 @@ instance encodeExpiredTokenException :: Encode ExpiredTokenException where encod
 
 -- | Constructs ExpiredTokenException from required parameters
 newExpiredTokenException :: ExpiredTokenException
-newExpiredTokenException  = ExpiredTokenException { "message": (NullOrUndefined Nothing) }
+newExpiredTokenException  = ExpiredTokenException { "message": Nothing }
 
 -- | Constructs ExpiredTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExpiredTokenException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ExpiredTokenException
-newExpiredTokenException'  customize = (ExpiredTokenException <<< customize) { "message": (NullOrUndefined Nothing) }
+newExpiredTokenException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ExpiredTokenException
+newExpiredTokenException'  customize = (ExpiredTokenException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
 newtype InternalServiceErrorException = InternalServiceErrorException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInternalServiceErrorException :: Newtype InternalServiceErrorException _
 derive instance repGenericInternalServiceErrorException :: Generic InternalServiceErrorException _
@@ -125,18 +124,18 @@ instance encodeInternalServiceErrorException :: Encode InternalServiceErrorExcep
 
 -- | Constructs InternalServiceErrorException from required parameters
 newInternalServiceErrorException :: InternalServiceErrorException
-newInternalServiceErrorException  = InternalServiceErrorException { "message": (NullOrUndefined Nothing) }
+newInternalServiceErrorException  = InternalServiceErrorException { "message": Nothing }
 
 -- | Constructs InternalServiceErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServiceErrorException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InternalServiceErrorException
-newInternalServiceErrorException'  customize = (InternalServiceErrorException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalServiceErrorException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InternalServiceErrorException
+newInternalServiceErrorException'  customize = (InternalServiceErrorException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
 newtype InvalidCustomerIdentifierException = InvalidCustomerIdentifierException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidCustomerIdentifierException :: Newtype InvalidCustomerIdentifierException _
 derive instance repGenericInvalidCustomerIdentifierException :: Generic InvalidCustomerIdentifierException _
@@ -146,18 +145,18 @@ instance encodeInvalidCustomerIdentifierException :: Encode InvalidCustomerIdent
 
 -- | Constructs InvalidCustomerIdentifierException from required parameters
 newInvalidCustomerIdentifierException :: InvalidCustomerIdentifierException
-newInvalidCustomerIdentifierException  = InvalidCustomerIdentifierException { "message": (NullOrUndefined Nothing) }
+newInvalidCustomerIdentifierException  = InvalidCustomerIdentifierException { "message": Nothing }
 
 -- | Constructs InvalidCustomerIdentifierException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidCustomerIdentifierException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidCustomerIdentifierException
-newInvalidCustomerIdentifierException'  customize = (InvalidCustomerIdentifierException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidCustomerIdentifierException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidCustomerIdentifierException
+newInvalidCustomerIdentifierException'  customize = (InvalidCustomerIdentifierException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The endpoint being called is in a region different from your EC2 instance. The region of the Metering service endpoint and the region of the EC2 instance must match.</p>
 newtype InvalidEndpointRegionException = InvalidEndpointRegionException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidEndpointRegionException :: Newtype InvalidEndpointRegionException _
 derive instance repGenericInvalidEndpointRegionException :: Generic InvalidEndpointRegionException _
@@ -167,18 +166,18 @@ instance encodeInvalidEndpointRegionException :: Encode InvalidEndpointRegionExc
 
 -- | Constructs InvalidEndpointRegionException from required parameters
 newInvalidEndpointRegionException :: InvalidEndpointRegionException
-newInvalidEndpointRegionException  = InvalidEndpointRegionException { "message": (NullOrUndefined Nothing) }
+newInvalidEndpointRegionException  = InvalidEndpointRegionException { "message": Nothing }
 
 -- | Constructs InvalidEndpointRegionException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidEndpointRegionException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidEndpointRegionException
-newInvalidEndpointRegionException'  customize = (InvalidEndpointRegionException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidEndpointRegionException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidEndpointRegionException
+newInvalidEndpointRegionException'  customize = (InvalidEndpointRegionException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The product code passed does not match the product code used for publishing the product.</p>
 newtype InvalidProductCodeException = InvalidProductCodeException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidProductCodeException :: Newtype InvalidProductCodeException _
 derive instance repGenericInvalidProductCodeException :: Generic InvalidProductCodeException _
@@ -188,17 +187,17 @@ instance encodeInvalidProductCodeException :: Encode InvalidProductCodeException
 
 -- | Constructs InvalidProductCodeException from required parameters
 newInvalidProductCodeException :: InvalidProductCodeException
-newInvalidProductCodeException  = InvalidProductCodeException { "message": (NullOrUndefined Nothing) }
+newInvalidProductCodeException  = InvalidProductCodeException { "message": Nothing }
 
 -- | Constructs InvalidProductCodeException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidProductCodeException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidProductCodeException
-newInvalidProductCodeException'  customize = (InvalidProductCodeException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidProductCodeException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidProductCodeException
+newInvalidProductCodeException'  customize = (InvalidProductCodeException <<< customize) { "message": Nothing }
 
 
 
 newtype InvalidTokenException = InvalidTokenException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidTokenException :: Newtype InvalidTokenException _
 derive instance repGenericInvalidTokenException :: Generic InvalidTokenException _
@@ -208,18 +207,18 @@ instance encodeInvalidTokenException :: Encode InvalidTokenException where encod
 
 -- | Constructs InvalidTokenException from required parameters
 newInvalidTokenException :: InvalidTokenException
-newInvalidTokenException  = InvalidTokenException { "message": (NullOrUndefined Nothing) }
+newInvalidTokenException  = InvalidTokenException { "message": Nothing }
 
 -- | Constructs InvalidTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidTokenException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidTokenException
-newInvalidTokenException'  customize = (InvalidTokenException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidTokenException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidTokenException
+newInvalidTokenException'  customize = (InvalidTokenException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
 newtype InvalidUsageDimensionException = InvalidUsageDimensionException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidUsageDimensionException :: Newtype InvalidUsageDimensionException _
 derive instance repGenericInvalidUsageDimensionException :: Generic InvalidUsageDimensionException _
@@ -229,12 +228,12 @@ instance encodeInvalidUsageDimensionException :: Encode InvalidUsageDimensionExc
 
 -- | Constructs InvalidUsageDimensionException from required parameters
 newInvalidUsageDimensionException :: InvalidUsageDimensionException
-newInvalidUsageDimensionException  = InvalidUsageDimensionException { "message": (NullOrUndefined Nothing) }
+newInvalidUsageDimensionException  = InvalidUsageDimensionException { "message": Nothing }
 
 -- | Constructs InvalidUsageDimensionException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidUsageDimensionException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidUsageDimensionException
-newInvalidUsageDimensionException'  customize = (InvalidUsageDimensionException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidUsageDimensionException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidUsageDimensionException
+newInvalidUsageDimensionException'  customize = (InvalidUsageDimensionException <<< customize) { "message": Nothing }
 
 
 
@@ -263,7 +262,7 @@ newMeterUsageRequest' _DryRun _ProductCode _Timestamp _UsageDimension _UsageQuan
 
 
 newtype MeterUsageResult = MeterUsageResult 
-  { "MeteringRecordId" :: NullOrUndefined (String)
+  { "MeteringRecordId" :: Maybe (String)
   }
 derive instance newtypeMeterUsageResult :: Newtype MeterUsageResult _
 derive instance repGenericMeterUsageResult :: Generic MeterUsageResult _
@@ -273,12 +272,12 @@ instance encodeMeterUsageResult :: Encode MeterUsageResult where encode = generi
 
 -- | Constructs MeterUsageResult from required parameters
 newMeterUsageResult :: MeterUsageResult
-newMeterUsageResult  = MeterUsageResult { "MeteringRecordId": (NullOrUndefined Nothing) }
+newMeterUsageResult  = MeterUsageResult { "MeteringRecordId": Nothing }
 
 -- | Constructs MeterUsageResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMeterUsageResult' :: ( { "MeteringRecordId" :: NullOrUndefined (String) } -> {"MeteringRecordId" :: NullOrUndefined (String) } ) -> MeterUsageResult
-newMeterUsageResult'  customize = (MeterUsageResult <<< customize) { "MeteringRecordId": (NullOrUndefined Nothing) }
+newMeterUsageResult' :: ( { "MeteringRecordId" :: Maybe (String) } -> {"MeteringRecordId" :: Maybe (String) } ) -> MeterUsageResult
+newMeterUsageResult'  customize = (MeterUsageResult <<< customize) { "MeteringRecordId": Nothing }
 
 
 
@@ -323,8 +322,8 @@ newResolveCustomerRequest' _RegistrationToken customize = (ResolveCustomerReques
 
 -- | <p>The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.</p>
 newtype ResolveCustomerResult = ResolveCustomerResult 
-  { "CustomerIdentifier" :: NullOrUndefined (CustomerIdentifier)
-  , "ProductCode" :: NullOrUndefined (ProductCode)
+  { "CustomerIdentifier" :: Maybe (CustomerIdentifier)
+  , "ProductCode" :: Maybe (ProductCode)
   }
 derive instance newtypeResolveCustomerResult :: Newtype ResolveCustomerResult _
 derive instance repGenericResolveCustomerResult :: Generic ResolveCustomerResult _
@@ -334,18 +333,18 @@ instance encodeResolveCustomerResult :: Encode ResolveCustomerResult where encod
 
 -- | Constructs ResolveCustomerResult from required parameters
 newResolveCustomerResult :: ResolveCustomerResult
-newResolveCustomerResult  = ResolveCustomerResult { "CustomerIdentifier": (NullOrUndefined Nothing), "ProductCode": (NullOrUndefined Nothing) }
+newResolveCustomerResult  = ResolveCustomerResult { "CustomerIdentifier": Nothing, "ProductCode": Nothing }
 
 -- | Constructs ResolveCustomerResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResolveCustomerResult' :: ( { "CustomerIdentifier" :: NullOrUndefined (CustomerIdentifier) , "ProductCode" :: NullOrUndefined (ProductCode) } -> {"CustomerIdentifier" :: NullOrUndefined (CustomerIdentifier) , "ProductCode" :: NullOrUndefined (ProductCode) } ) -> ResolveCustomerResult
-newResolveCustomerResult'  customize = (ResolveCustomerResult <<< customize) { "CustomerIdentifier": (NullOrUndefined Nothing), "ProductCode": (NullOrUndefined Nothing) }
+newResolveCustomerResult' :: ( { "CustomerIdentifier" :: Maybe (CustomerIdentifier) , "ProductCode" :: Maybe (ProductCode) } -> {"CustomerIdentifier" :: Maybe (CustomerIdentifier) , "ProductCode" :: Maybe (ProductCode) } ) -> ResolveCustomerResult
+newResolveCustomerResult'  customize = (ResolveCustomerResult <<< customize) { "CustomerIdentifier": Nothing, "ProductCode": Nothing }
 
 
 
 -- | <p>The calls to the MeterUsage API are throttled.</p>
 newtype ThrottlingException = ThrottlingException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeThrottlingException :: Newtype ThrottlingException _
 derive instance repGenericThrottlingException :: Generic ThrottlingException _
@@ -355,18 +354,18 @@ instance encodeThrottlingException :: Encode ThrottlingException where encode = 
 
 -- | Constructs ThrottlingException from required parameters
 newThrottlingException :: ThrottlingException
-newThrottlingException  = ThrottlingException { "message": (NullOrUndefined Nothing) }
+newThrottlingException  = ThrottlingException { "message": Nothing }
 
 -- | Constructs ThrottlingException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThrottlingException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ThrottlingException
-newThrottlingException'  customize = (ThrottlingException <<< customize) { "message": (NullOrUndefined Nothing) }
+newThrottlingException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ThrottlingException
+newThrottlingException'  customize = (ThrottlingException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
 newtype TimestampOutOfBoundsException = TimestampOutOfBoundsException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeTimestampOutOfBoundsException :: Newtype TimestampOutOfBoundsException _
 derive instance repGenericTimestampOutOfBoundsException :: Generic TimestampOutOfBoundsException _
@@ -376,12 +375,12 @@ instance encodeTimestampOutOfBoundsException :: Encode TimestampOutOfBoundsExcep
 
 -- | Constructs TimestampOutOfBoundsException from required parameters
 newTimestampOutOfBoundsException :: TimestampOutOfBoundsException
-newTimestampOutOfBoundsException  = TimestampOutOfBoundsException { "message": (NullOrUndefined Nothing) }
+newTimestampOutOfBoundsException  = TimestampOutOfBoundsException { "message": Nothing }
 
 -- | Constructs TimestampOutOfBoundsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimestampOutOfBoundsException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> TimestampOutOfBoundsException
-newTimestampOutOfBoundsException'  customize = (TimestampOutOfBoundsException <<< customize) { "message": (NullOrUndefined Nothing) }
+newTimestampOutOfBoundsException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> TimestampOutOfBoundsException
+newTimestampOutOfBoundsException'  customize = (TimestampOutOfBoundsException <<< customize) { "message": Nothing }
 
 
 
@@ -438,9 +437,9 @@ instance encodeUsageRecordList :: Encode UsageRecordList where encode = genericE
 
 -- | <p>A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.</p>
 newtype UsageRecordResult = UsageRecordResult 
-  { "UsageRecord" :: NullOrUndefined (UsageRecord)
-  , "MeteringRecordId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (UsageRecordResultStatus)
+  { "UsageRecord" :: Maybe (UsageRecord)
+  , "MeteringRecordId" :: Maybe (String)
+  , "Status" :: Maybe (UsageRecordResultStatus)
   }
 derive instance newtypeUsageRecordResult :: Newtype UsageRecordResult _
 derive instance repGenericUsageRecordResult :: Generic UsageRecordResult _
@@ -450,12 +449,12 @@ instance encodeUsageRecordResult :: Encode UsageRecordResult where encode = gene
 
 -- | Constructs UsageRecordResult from required parameters
 newUsageRecordResult :: UsageRecordResult
-newUsageRecordResult  = UsageRecordResult { "MeteringRecordId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "UsageRecord": (NullOrUndefined Nothing) }
+newUsageRecordResult  = UsageRecordResult { "MeteringRecordId": Nothing, "Status": Nothing, "UsageRecord": Nothing }
 
 -- | Constructs UsageRecordResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUsageRecordResult' :: ( { "UsageRecord" :: NullOrUndefined (UsageRecord) , "MeteringRecordId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (UsageRecordResultStatus) } -> {"UsageRecord" :: NullOrUndefined (UsageRecord) , "MeteringRecordId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (UsageRecordResultStatus) } ) -> UsageRecordResult
-newUsageRecordResult'  customize = (UsageRecordResult <<< customize) { "MeteringRecordId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "UsageRecord": (NullOrUndefined Nothing) }
+newUsageRecordResult' :: ( { "UsageRecord" :: Maybe (UsageRecord) , "MeteringRecordId" :: Maybe (String) , "Status" :: Maybe (UsageRecordResultStatus) } -> {"UsageRecord" :: Maybe (UsageRecord) , "MeteringRecordId" :: Maybe (String) , "Status" :: Maybe (UsageRecordResultStatus) } ) -> UsageRecordResult
+newUsageRecordResult'  customize = (UsageRecordResult <<< customize) { "MeteringRecordId": Nothing, "Status": Nothing, "UsageRecord": Nothing }
 
 
 
